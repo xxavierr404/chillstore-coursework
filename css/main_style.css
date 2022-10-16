@@ -1,11 +1,34 @@
 @import url(header.css);
+@import url(form.css);
+
+
+.nintendo-div-flex {
+    display: flex;
+    flex-direction: row;
+}
 
 body {
     margin: 0;
+    min-width: fit-content;
 }
 
 section {
     padding: 5px 30px;
+}
+
+.gallery {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.gallery img {
+    max-width: 25vw;
+    overflow: hidden;
+    align-self: center;
+    justify-self: center;
+    outline: #061b31 2px dotted;
+    margin: 5px;
+    object-fit: cover;
 }
 
 h2 {
@@ -59,6 +82,7 @@ a#nintendo-link:hover {
 
 dl {
     display: flex;
+    margin-right: 0;
     flex-direction: column;
     margin-block-start: 0;
     margin-block-end: 0;
@@ -77,13 +101,14 @@ dd {
     padding: 5px;
     box-shadow: black 3px 3px 3px;
     text-align: justify;
-    display: inline-flex;
-    flex-direction: row;
+    margin-right: 0;
     row-gap: 5px;
+    width: 100%;
 }
 
-dd img, dd a {
+dd img {
     padding: 20px;
+    float: left;
 }
 
 footer {
@@ -93,7 +118,7 @@ footer {
 }
 
 .ps-div {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.84) 5%, #00A5FF 85%);
+    background: linear-gradient(to bottom, #3B353E 5%, #00A5FF 85%);
 }
 
 .nintendo-div {
@@ -128,4 +153,43 @@ div.section-divider {
     margin: 0;
     border: none;
     background-color: black;
+}
+
+.up-link {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 50;
+}
+
+.ps-logo {
+    float: right;
+}
+
+blockquote {
+    text-align: right;
+    margin-top: 0
+}
+
+@media screen and (max-width: 480px) {
+    main {
+        display: flex;
+    }
+
+    .nintendo-div-flex {
+        flex-direction: column;
+    }
+
+    .switch-image {
+        align-self: center;
+    }
+
+    .gallery {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gallery img {
+        max-width: 100vw;
+    }
 }

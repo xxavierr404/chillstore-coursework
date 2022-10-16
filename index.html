@@ -2,51 +2,71 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHILL STORE</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="main_style.css">
+    <link rel="stylesheet" href="css/main_style.css">
+    <script>
+        $('.carousel').carousel({
+            interval: 1000;
+        });
+    </script>
 </head>
 <body>
     <header>
         <img class="logo" src="./logo.png" alt="CHILL STORE"
-        width="128" height="128"
+        width="100" height="100"
         >
         <span class="flex-fill"></span>
-        <nav class="btn-group btn-group-lg">
+        <nav class="btn-group btn-group-lg header-nav">
             <a href="#ps-section" class="btn btn-lg btn-light">PlayStation</a>
             <a href="#nintendo-section" class="btn btn-lg btn-light">Nintendo</a>
             <a href="#xbox-section" class="btn btn-lg btn-light">XBOX</a>
         </nav>
+        <label for="burger" class="burger"><img src="burger.png" alt="Menu" width="64" height="64"></label>
+        <input type="checkbox" id="burger" class="burger" hidden>
+        <div class="burger-menu">
+            <a href="#ps-section" class="btn btn-lg btn-light">PlayStation</a>
+            <a href="#nintendo-section" class="btn btn-lg btn-light">Nintendo</a>
+            <a href="#xbox-section" class="btn btn-lg btn-light">XBOX</a>
+            <a href="contact-form.html" class="btn btn-lg btn-light">Обратная связь</a>
+        </div>
     </header>
     <main>
         <article>
             <section class="console-div ps-div" id="ps-section">
                 <h2>Игровые консоли <a class="console-link" href="https://playstation.com">PlayStation</a></h2>
                 <p>
-                    <em>PlayStation</em><sup>(официальное сокращение PS; дословно — «Игровая станция»)</sup><br/>
+                    <img class="ps-logo" src="ps-logo.svg" alt="PS Logo" width="200" height="200">
+                    <em>PlayStation</em> (официальное сокращение PS; дословно — «Игровая станция»)<br/>
                     Бренд, принадлежащий <b>Sony Interactive Entertainment</b> и включающий в себя серию стационарных
                     и портативных игровых консолей (также используемых как домашние кинотеатры), игровых контроллеров и
                     онлайн-сервисов. Первая модель игровой приставки была выпущена в декабре 1994 года в Японии.
                 </p>
+                <hr/>
                 <dl>
                     <dt>PS1</dt>
-                    <dd><span>PlayStation — игровая приставка пятого поколения, разработанная компанией Sony Computer Entertainment
+                    <dd>
+                        <a href="https://playstation.com" class="anchor-dd-image flex-shrink-1">
+                            <img src="https://doomwiki.org/w/images/d/dc/Sony-PlayStation-5501-Console-FL.png"
+                                 alt="PS1 Picture"
+                                 class="dd-image-clickable"
+                                 width="250" height="200"
+                            >
+                        </a>
+                        <span>PlayStation — игровая приставка пятого поколения, разработанная компанией Sony Computer Entertainment
                         под руководством Кэна Кутараги. Выход приставки состоялся 3 декабря 1994 года в Японии. Приставка
                         является первой игровой системой в линейке PlayStation. В 2000 году вышла обновлённая версия приставки
                         под названием PSone, которая отличалась от оригинальной PlayStation значительно меньшим размером.
                         Приставка оказалась очень популярной, обеспечив Sony прорыв в игровой индустрии, где до того момента
                         безраздельно властвовали Nintendo и Sega.</span>
-                        <a href="https://playstation.com" class="anchor-dd-image flex-shrink-1">
-                            <img src="https://doomwiki.org/w/images/d/dc/Sony-PlayStation-5501-Console-FL.png"
-                                 alt="PS1 Picture"
-                                 class="dd-image-clickable"
-                            >
-                        </a>
                     </dd>
                     <dt>PS2</dt>
                     <dd>
@@ -119,7 +139,7 @@
                     <strong><abbr title="Nintendo Entertainment System">NES</abbr></strong>
                     и игры <u>Super Mario Bros.</u> в 1985 году.
                 </p>
-                <div class="flex-row">
+                <div class="nintendo-div-flex">
                 <ol type="I" start="0" class="nintendo-list">
                     <li>
                         Color TV Game - 1977
@@ -182,7 +202,7 @@
                     <area shape="circle" coords="320px, 180px, 40px" href="https://www.nintendo.ru/-/-Nintendo-Switch/Nintendo-Switch/Nintendo-Switch-1148779.html" alt="Switch">
                 </map>
                     <aside class="switch-quote-and-img">
-                        <blockquote style="text-align: right; margin-top: 0">
+                        <blockquote>
                         <pre>
                             „It isn't about "games", for me, personally, and it never really was.
                             It was about creating something: anything far bigger than yourself.“
@@ -209,12 +229,41 @@
             <section>
                 <h2 id="last-title">Достойны упоминания</h2>
             </section>
+            <section>
+                <h2>Галерея</h2>
+                <div class="gallery carousel slide" data-ride="carousel">
+                    <div class="carousel-inner row">
+                        <div class="carousel-item active col-md-4">
+                            <img class="d-block img-fluid" src="gallery/ps1.jpg" alt="PS1">
+                        </div>
+                        <div class="carousel-item col-md-4">
+                            <img class="d-block img-fluid" src="gallery/switchdisconnected.jpg" alt="Switch">
+                        </div>
+                        <div class="carousel-item col-md-4">
+                            <img class="d-block img-fluid" src="gallery/switchdock.jpg" alt="Switch">
+                        </div>
+                        <div class="carousel-item col-md-4">
+                            <img class="d-block img-fluid" src="gallery/xbox.jpg" alt="XBOX">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="gallery/ps4dualshocks.jpg" alt="PS4">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="gallery/ps5.jpg" alt="PS5">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="gallery/ps4headphones.jpg" alt="PS4">
+                        </div>
+                    </div>
+                </div>
+            </section>
         </article>
-        <a href="#first-title">В начало страницы</a>
+        <a class="up-link" href="#ps-section"><img class="gamepad-image" src="arrow.png" alt="В начало страницы" width="100" height="100"></a>
     </main>
     <footer>
-        <h4 style="margin-bottom: 0; color: #e0e0e0">Контакты</h4>
+        <h4 class="contacts-title">Контакты</h4>
         <a href="tel:88005553535">Телефон</a>
+        <a href="contact-form.html">Обратная связь</a>
         <address>
             Связаться с автором также можно по <a href="mailto:vasilievvict1@yandex.ru">E-mail</a>
         </address>

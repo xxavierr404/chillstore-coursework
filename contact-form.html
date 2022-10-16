@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHILL STORE</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main_style.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="./logo.png" alt="CHILL STORE"
+        width="100" height="100"
+        >
+    </header>
+    <main>
+        <div class="form-container">
+            <div class="contact-form">
+                <div class="form-title">Форма обратной связи</div>
+                <form action="" method="get">
+                    <fieldset>
+                        <legend>Пожалуйста, заполните эти поля: </legend>
+                        <div>
+                            <label for="name">Ваше имя: </label>
+                            <input type="text" id="name" required>
+                            <label for="phone">Ваш номер телефона: </label>
+                            <input type="tel" id="phone" pattern="8[0-9]{10}" placeholder="8-xxx-xxx-xxxx" required>
+                        </div>
+                        <div>
+                            <label for="mail">Ваш e-mail: </label>
+                            <input type="email" id="mail" placeholder="example@chillstore.ru">
+                            <label for="pass">Пароль, если есть: </label>
+                            <input type="password" id="pass">
+                        </div>
+                        <div>
+                            <label for="photo">Скриншот или фото проблемы: </label>
+                            <input type="file" id="photo">
+                        </div>
+                        <div>
+                            Вы ранее пользовались нашими услугами?
+                            <label for="used">Да</label>
+                            <input type="radio" id="used" value="yes" name="new-client">
+                            <label for="didnt-use">Нет</label>
+                            <input type="radio" id="didnt-use" value="no" name="new-client" checked>
+                        </div>
+                        <div>
+                            <label for="incident-time">Дата и время возникновения проблемы: </label>
+                            <input type="datetime-local" id="incident-time" min="2021-01-01" max="2022-12-31" required>
+                        </div>
+                    </fieldset>
+                    <div>
+                        Выберите категории, к которым Вы бы отнесли Вашу проблему:
+                        <select name="problem-type" id="problem" multiple required size="4">
+                            <option value="site">Проблемы с сайтом</option>
+                            <option value="store">Обслуживание в магазине</option>
+                            <option value="item">Проблемы с товаром</option>
+                            <option value="wishes">Пожелания</option>
+                        </select>
+                    </div>
+                    <div>
+                        <textarea name="summary" id="" cols="80" rows="5" placeholder="Опишите свою проблему..." required
+                        minlength="30" maxlength="400" style="resize: none;"></textarea>
+                    </div>
+                    <div>
+                        <label for="accept-terms">Я прочитал и согласен с правилами обработки данных </label>
+                        <input type="checkbox" value="off" id="accept-terms" required>
+                    </div>
+                    <div>
+                        <input type="submit" id="submit-button" value="Отправить">
+                    </div>
+                </form>
+                <a href="index.html"><button>Назад</button></a>
+            </div>
+            <div>
+                <iframe class="videoframe" src="video-frame.html"></iframe>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h4 class="contacts-title">Контакты</h4>
+        <a href="tel:88005553535">Телефон</a>
+        <address>
+            Связаться с автором также можно по <a href="mailto:vasilievvict1@yandex.ru">E-mail</a>
+        </address>
+    </footer>
+</body>
+</html>

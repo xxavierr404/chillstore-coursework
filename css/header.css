@@ -1,0 +1,131 @@
+#first-title {
+    margin-bottom: 7px;
+    font-size: 30px;
+    color: #e0e0e0;
+    text-transform: lowercase;
+    top: 50%;
+    vertical-align: middle;
+}
+
+.burger {
+    display: none;
+}
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    transition: all ease-in-out 1s;
+    transform: rotateZ(90deg);
+    position: absolute;
+    right: 150%;
+    top: 128px;
+    opacity: 0;
+}
+
+.flex-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    display: inline-flex;
+    width: 100%;
+}
+
+header, footer {
+    padding: 10px 30px;
+    background: #3b353e;
+    height: 128px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+header {
+    position: sticky;
+    top: 0;
+}
+
+.contacts-title {
+    margin-bottom: 0;
+    color: #e0e0e0;
+    position: relative;
+    left: 45%;
+}
+
+.logo {
+    max-width: 100%;
+    padding: 5px 10px 10px 10px;
+}
+
+a.btn.btn-light:visited {
+    background-color: gray;
+}
+
+a.btn-light:hover {
+    box-shadow: white 0 0 7px;
+}
+
+a.btn-light[href="#ps-section"]:hover {
+    background-color: #070CF6;
+    outline-color: #070CF6;
+}
+
+a.btn-light[href="#nintendo-section"]:hover {
+    background-color: #e0170e;
+    outline-color: #e0170e;
+}
+
+a.btn-light[href="#xbox-section"]:hover {
+    background-color: #28e029;
+    outline-color: #28e029;
+}
+
+a.btn.btn-light:active {
+    background-color: mediumpurple;
+    color: white;
+}
+
+.btn {
+    text-decoration: black 2px underline dotted;
+}
+
+@media screen and (max-width: 480px) {
+    .burger {
+        display: inline;
+    }
+
+    .header-nav {
+        visibility: hidden;
+    }
+
+    .burger-menu {
+        background-color: #3b353e;
+        width: 100%;
+        display: flex;
+    }
+
+    .burger-menu::before {
+        content: "Меню";
+        color: ghostwhite;
+        display: block;
+        text-align: center;
+        font-size: 32pt;
+        font-weight: bold;
+        font-family: "Poiret One", cursive;
+    }
+
+    .burger-menu::after {
+        content: "";
+        z-index: 50;
+        display: inline-block;
+        height: 10px;
+        width: 100%;
+        box-shadow: whitesmoke 0 0 10px;
+    }
+
+    .burger:checked ~ .burger-menu {
+        transform: rotateZ(0deg);
+        right: 0;
+        opacity: 1;
+    }
+}
