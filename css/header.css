@@ -43,6 +43,7 @@ header, footer {
 header {
     position: sticky;
     top: 0;
+    z-index: 1;
 }
 
 .contacts-title {
@@ -66,8 +67,9 @@ a.btn-light:hover {
 }
 
 a.btn-light[href="#ps-section"]:hover {
-    background-color: #070CF6;
     outline-color: #070CF6;
+    animation: ease ps-hover alternate 3s infinite;
+    background-image: linear-gradient(to right bottom, blue, lightblue);
 }
 
 a.btn-light[href="#nintendo-section"]:hover {

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/main_style.css">
     <script>
         $('.carousel').carousel({
-            interval: 1000;
+            interval: 100
         });
     </script>
 </head>
@@ -42,7 +42,7 @@
     <main>
         <article>
             <section class="console-div ps-div" id="ps-section">
-                <h2>Игровые консоли <a class="console-link" href="https://playstation.com">PlayStation</a></h2>
+                <h2>Игровые консоли <span><a id="ps-link" href="https://playstation.com">PlayStation</a></span></h2>
                 <p>
                     <img class="ps-logo" src="ps-logo.svg" alt="PS Logo" width="200" height="200">
                     <em>PlayStation</em> (официальное сокращение PS; дословно — «Игровая станция»)<br/>
@@ -125,6 +125,19 @@
                         Старт продаж состоялся 12 ноября 2020 года в США, Канаде, Мексике, Южной Корее, Японии, Австралии
                         и Новой Зеландии, а 19 ноября 2020 года и в остальных регионах.</span></dd>
                 </dl>
+                <div class="video-container">
+                    <video class="ps5-commercial" src="ps5.mp4" muted autoplay preload loop></video>
+                    <div>
+                        <h4>PlayStation 5</h4>
+                        <p>
+                            Ультраскоростной SSD обеспечивает молниеносную загрузку данных,
+                            а тактильная отдача, адаптивные триггеры и 3D-звук
+                            усиливают погружение в невероятные игры нового поколения для PlayStation.
+                            Доступно в нашем магазине по цене от 59 999,00 ₽ до 79 999,00 ₽. Также у нас доступны
+                            для покупки игры, совместимые с PS5 и PS4.
+                        </p>
+                    </div>
+                </div>
             </section>
             <div class="section-divider"></div>
             <section class="console-div nintendo-div" id="nintendo-section">
@@ -228,37 +241,44 @@
             </section>
             <section>
                 <h2 id="last-title">Достойны упоминания</h2>
+                <h2>Игровые консоли <a href="https://en.wikipedia.org/wiki/List_of_Sega_video_game_consoles" id="sega-link">SEGA</a></h2>
             </section>
             <section>
-                <h2>Галерея</h2>
-                <div class="gallery carousel slide" data-ride="carousel">
-                    <div class="carousel-inner row">
-                        <div class="carousel-item active col-md-4">
-                            <img class="d-block img-fluid" src="gallery/ps1.jpg" alt="PS1">
+                <h2>Фото</h2>
+                <div class="gallery">
+                    <div>
+                        <img src="gallery/switchdock.jpg" alt="Switch">
+                        <div>
+                            <h4>Nintendo Switch</h4>
+                            <p>Гибридная консоль Nintendo Switch - хороший выбор как для домашнего, так и для портативного гейминга.</p>
                         </div>
-                        <div class="carousel-item col-md-4">
-                            <img class="d-block img-fluid" src="gallery/switchdisconnected.jpg" alt="Switch">
+                    </div>
+                    <div>
+                        <img src="gallery/xbox.jpg" alt="XBOX">
+                        <div>
+                            <h4>XBOX Series X</h4>
+                            <p>Последняя на данный момент консоль серии XBOX порадует Вас графикой высочайшего качества.</p>
                         </div>
-                        <div class="carousel-item col-md-4">
-                            <img class="d-block img-fluid" src="gallery/switchdock.jpg" alt="Switch">
-                        </div>
-                        <div class="carousel-item col-md-4">
-                            <img class="d-block img-fluid" src="gallery/xbox.jpg" alt="XBOX">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="gallery/ps4dualshocks.jpg" alt="PS4">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="gallery/ps5.jpg" alt="PS5">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="gallery/ps4headphones.jpg" alt="PS4">
+                    </div>
+                    <div>
+                        <img src="gallery/ps5.jpg" alt="PS5">
+                        <div>
+                            <h4>PlayStation 5</h4>
+                            <p>Великолепная графика нового поколения и эксклюзивные игры, которых нет больше нигде.</p>
                         </div>
                     </div>
                 </div>
             </section>
         </article>
         <a class="up-link" href="#ps-section"><img class="gamepad-image" src="arrow.png" alt="В начало страницы" width="100" height="100"></a>
+        <div class="notification">
+            <div>!</div>
+            <div class="notification-list">
+                <div>В нашем магазине новое поступление консолей PS5! Спешите, пока не закончились.</div>
+                <div>Акция! При покупке Nintendo Switch OLED - NES Classic в подарок.</div>
+                <div>Вы всегда можете протестировать консоли перед покупкой в нашем магазине.</div>
+            </div>
+        </div>
     </main>
     <footer>
         <h4 class="contacts-title">Контакты</h4>
