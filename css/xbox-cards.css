@@ -1,0 +1,64 @@
+body {
+    z-index: -1;
+}
+
+.card-panel {
+    overflow: hidden;
+    transition: all 1s ease;
+    right: 0;
+}
+
+.card-panel:hover {
+    color: white;
+}
+
+.card-panel:hover::before {
+    opacity: 1;
+}
+
+.card-panel::before {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: black;
+    border-radius: 20px;
+    transition: 1s ease-in-out opacity;
+}
+
+.card-panel::after {
+    position: absolute;
+    display: block;
+    z-index: -2;
+    top: -25%;
+    left: -25%;
+    content: '';
+    width: 150%;
+    height: 150%;
+    transform: scale(120%);
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(greenyellow, black), linear-gradient(black, black), linear-gradient(black, greenyellow), linear-gradient(black, black);
+    animation: rotate 5s ease infinite;
+    opacity: 0;
+    transition: 1s .3s all ease;
+}
+
+.card-panel:hover::after {
+    opacity: 1;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateZ(0);
+    }
+    to {
+        transform: rotateZ(720deg);
+    }
+}

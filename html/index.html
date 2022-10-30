@@ -4,25 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHILL STORE</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/res/images/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main_style.css">
-    <script>
-        $('.carousel').carousel({
-            interval: 100
-        });
-    </script>
+    <link rel="stylesheet" href="../css/main_style.css">
 </head>
 <body>
     <header>
-        <img class="logo" src="./logo.png" alt="CHILL STORE"
-        width="100" height="100"
+        <img class="logo" src="../res/images/logo.png" alt="CHILL STORE"
+             width="100" height="100"
         >
         <span class="flex-fill"></span>
         <nav class="btn-group btn-group-lg header-nav">
@@ -30,7 +22,7 @@
             <a href="#nintendo-section" class="btn btn-lg btn-light">Nintendo</a>
             <a href="#xbox-section" class="btn btn-lg btn-light">XBOX</a>
         </nav>
-        <label for="burger" class="burger"><img src="burger.png" alt="Menu" width="64" height="64"></label>
+        <label for="burger" class="burger"><img src="../res/images/burger.png" alt="Menu" width="64" height="64"></label>
         <input type="checkbox" id="burger" class="burger" hidden>
         <div class="burger-menu">
             <a href="#ps-section" class="btn btn-lg btn-light">PlayStation</a>
@@ -44,7 +36,7 @@
             <section class="console-div ps-div" id="ps-section">
                 <h2>Игровые консоли <span><a id="ps-link" href="https://playstation.com">PlayStation</a></span></h2>
                 <p>
-                    <img class="ps-logo" src="ps-logo.svg" alt="PS Logo" width="200" height="200">
+                    <img class="ps-logo" src="../res/images/ps-logo.svg" alt="PS Logo" width="200" height="200">
                     <em>PlayStation</em> (официальное сокращение PS; дословно — «Игровая станция»)<br/>
                     Бренд, принадлежащий <b>Sony Interactive Entertainment</b> и включающий в себя серию стационарных
                     и портативных игровых консолей (также используемых как домашние кинотеатры), игровых контроллеров и
@@ -126,7 +118,7 @@
                         и Новой Зеландии, а 19 ноября 2020 года и в остальных регионах.</span></dd>
                 </dl>
                 <div class="video-container">
-                    <video class="ps5-commercial" src="ps5.mp4" muted autoplay preload loop></video>
+                    <video class="ps5-commercial" src="../res/videos/ps5.mp4" muted autoplay preload loop></video>
                     <div>
                         <h4>PlayStation 5</h4>
                         <p>
@@ -247,21 +239,21 @@
                 <h2>Фото</h2>
                 <div class="gallery">
                     <div>
-                        <img src="gallery/switchdock.jpg" alt="Switch">
+                        <img src="../gallery/switchdock.jpg" alt="Switch">
                         <div>
                             <h4>Nintendo Switch</h4>
                             <p>Гибридная консоль Nintendo Switch - хороший выбор как для домашнего, так и для портативного гейминга.</p>
                         </div>
                     </div>
                     <div>
-                        <img src="gallery/xbox.jpg" alt="XBOX">
+                        <img src="../gallery/xbox.jpg" alt="XBOX">
                         <div>
                             <h4>XBOX Series X</h4>
                             <p>Последняя на данный момент консоль серии XBOX порадует Вас графикой высочайшего качества.</p>
                         </div>
                     </div>
                     <div>
-                        <img src="gallery/ps5.jpg" alt="PS5">
+                        <img src="../gallery/ps5.jpg" alt="PS5">
                         <div>
                             <h4>PlayStation 5</h4>
                             <p>Великолепная графика нового поколения и эксклюзивные игры, которых нет больше нигде.</p>
@@ -270,7 +262,7 @@
                 </div>
             </section>
         </article>
-        <a class="up-link" href="#ps-section"><img class="gamepad-image" src="arrow.png" alt="В начало страницы" width="100" height="100"></a>
+        <a class="up-link" href="#ps-section"><img class="gamepad-image" src="../res/images/arrow.png" alt="В начало страницы" width="100" height="100"></a>
         <div class="notification">
             <div>!</div>
             <div class="notification-list">
@@ -282,11 +274,28 @@
     </main>
     <footer>
         <h4 class="contacts-title">Контакты</h4>
-        <a href="tel:88005553535">Телефон</a>
-        <a href="contact-form.html">Обратная связь</a>
+        <div><a href="tel:88005553535">Телефон</a></div>
+        <div><a href="contact-form.html">Обратная связь</a></div>
         <address>
             Связаться с автором также можно по <a href="mailto:vasilievvict1@yandex.ru">E-mail</a>
         </address>
+        <div class="social-links">
+            <button class="social">
+                <img src="../res/images/vk-logo.png" alt="VK" width="30" height="30">
+            </button>
+            <button class="social">
+                <img src="../res/images/tiktok-logo.png" alt="TikTok" width="30" height="30">
+            </button>
+            <button class="social">
+                <img src="../res/images/yt-logo.png" alt="YouTube" width="30" height="30">
+            </button>
+            <button class="social">
+                <img src="../res/images/telegram-logo.svg" alt="Telegram" width="30" height="30">
+            </button>
+            <button class="social">
+                <img src="../res/images/discord-logo.png" alt="Discord" width="30" height="30">
+            </button>
+        </div>
     </footer>
 </body>
 </html>

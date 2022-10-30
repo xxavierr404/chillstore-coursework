@@ -1,0 +1,147 @@
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 5%;
+    justify-content: space-around;
+}
+
+.card-nobootstrap {
+    height: 500px;
+    width: 200px;
+    margin: 50px;
+    position: relative;
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    height: 500px;
+    width: 200px;
+    margin: 0 auto;
+    transform: skewX(10deg);
+    transition: transform 1s ease;
+}
+
+.card-panel:hover ~ .card-bg {
+    transform: skewX(0);
+}
+
+.card-bg#wiiu-card {
+    background: linear-gradient(to bottom right, antiquewhite, lightgray);
+}
+
+.card-bg#threeds-card {
+    background: linear-gradient(to bottom right, red, black);
+}
+
+.card-bg#switch-card {
+    background: linear-gradient(to bottom right, whitesmoke, tomato);
+}
+
+.card-panel {
+    padding: 20px;
+    position: absolute;
+    width: 250px;
+    height: 50%;
+    top: calc(100% / 4);
+    right: 20px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: black;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 1px 10px black;
+}
+
+.pseudo-anim {
+    position: absolute;
+    top: calc(100% / 4);
+    left: -70px;
+}
+
+.pseudo-anim::before {
+    z-index: 1;
+    display: inline-block;
+    position: absolute;
+    top: -70px;
+    left: -100px;
+    content: '';
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    animation: move-circular-top-left ease infinite 3s;
+    opacity: 0;
+    transition: opacity ease .5s;
+}
+
+.card-panel:hover ~ .pseudo-anim::before {
+    opacity: 1;
+    animation-play-state: running;
+}
+
+.pseudo-anim::after {
+    z-index: 1;
+    display: block;
+    content: '';
+    position: absolute;
+    top: 225px;
+    left: 250px;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    animation: move-circular-bottom-right ease infinite 3s;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+.card-panel:hover ~ .pseudo-anim::after {
+    opacity: 1;
+}
+
+@keyframes move-circular-top-left {
+    from {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(300%);
+    }
+    50% {
+        transform: translateY(300%) translateX(300%);
+    }
+    75% {
+        transform: translateY(300%);
+    }
+    to {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes move-circular-bottom-right {
+    from {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-300%);
+    }
+    50% {
+        transform: translateY(-300%) translateX(-300%);
+    }
+    75% {
+        transform: translateY(-300%);
+    }
+    to {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

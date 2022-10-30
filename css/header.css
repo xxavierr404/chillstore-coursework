@@ -32,7 +32,7 @@
 }
 
 header, footer {
-    padding: 10px 30px;
+    padding: 10px 0;
     background: #3b353e;
     height: 128px;
     display: flex;
@@ -43,7 +43,8 @@ header, footer {
 header {
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 5;
+    padding: 10px 10px;
 }
 
 .contacts-title {
@@ -97,7 +98,7 @@ a.btn.btn-light:active {
     }
 
     .header-nav {
-        visibility: hidden;
+        display: none;
     }
 
     .burger-menu {
