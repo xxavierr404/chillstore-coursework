@@ -2,15 +2,22 @@
     --base-transform: 100%;
 }
 
+main {
+    min-height: 100%;
+}
+
 .form-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
+    height: 100%;
     padding: 20px;
     position: relative;
+    overflow: hidden;
 }
 
 .contact-form {
+    position: relative;
     height: fit-content;
     background-color: rgba(255, 175, 175, 0.5);
     border-radius: 10px;
@@ -20,7 +27,7 @@
 
 form div, legend {
     margin-bottom: 2%;
-    text-align: center;
+    text-align: left;
 }
 
 input {
@@ -30,6 +37,10 @@ input {
     background-color: rgba(255,86,79,0.3);
     backdrop-filter: blur(10px);
     border-style: dashed;
+}
+
+input[type="text"] {
+    width: 190px;
 }
 
 #submit-button {
@@ -104,10 +115,10 @@ main {
 .contact-form::before {
     content: '';
     z-index: 1;
-    left: 45%;
-    top: 50%;
-    width: 300px;
-    height: 300px;
+    left: 90%;
+    top: 70%;
+    width: 200px;
+    height: 200px;
 }
 
 #glass4 {
@@ -126,5 +137,11 @@ main {
     }
     to {
         transform: translateY(calc(var(--base-transform) / -3));
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .form-container {
+        flex-direction: column;
     }
 }
