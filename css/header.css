@@ -43,7 +43,7 @@ header, footer {
 header {
     position: sticky;
     top: 0;
-    z-index: 5;
+    z-index: 10;
     padding: 10px 10px;
 }
 
@@ -57,10 +57,6 @@ header {
 .logo {
     max-width: 100%;
     padding: 5px 10px 10px 10px;
-}
-
-a.btn.btn-light:visited {
-    background-color: gray;
 }
 
 a.btn-light:hover {

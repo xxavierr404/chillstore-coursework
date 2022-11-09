@@ -21,6 +21,7 @@
             <a href="#ps-section" class="btn btn-lg btn-light">PlayStation</a>
             <a href="#nintendo-section" class="btn btn-lg btn-light">Nintendo</a>
             <a href="#xbox-section" class="btn btn-lg btn-light">XBOX</a>
+            <a href="./html/cart.html" class="btn btn-lg btn-light">Корзина</a>
         </nav>
         <label for="burger" class="burger"><img src="res/images/burger.png" alt="Menu" width="64" height="64"></label>
         <input type="checkbox" id="burger" class="burger" hidden>
@@ -29,18 +30,21 @@
             <a href="#nintendo-section" class="btn btn-lg btn-light">Nintendo</a>
             <a href="#xbox-section" class="btn btn-lg btn-light">XBOX</a>
             <a href="html/contact-form.html" class="btn btn-lg btn-light">Обратная связь</a>
+            <a href="./html/cart.html" class="btn btn-lg btn-light">Корзина</a>
         </div>
     </header>
     <main>
         <article>
             <section class="console-div ps-div" id="ps-section">
                 <h2>Игровые консоли <span><a id="ps-link" href="https://playstation.com">PlayStation</a></span></h2>
-                <p>
+                <div class="ps-grid">
                     <img class="ps-logo" src="res/images/ps-logo.svg" alt="PS Logo" width="200" height="200">
+                <p class="ps-title">
                     <em>PlayStation</em> (официальное сокращение PS; дословно — «Игровая станция»)<br/>
                     Бренд, принадлежащий <b>Sony Interactive Entertainment</b> и включающий в себя серию стационарных
                     и портативных игровых консолей (также используемых как домашние кинотеатры), игровых контроллеров и
                     онлайн-сервисов. Первая модель игровой приставки была выпущена в декабре 1994 года в Японии.
+                    <a href="./html/playstation.html" class="btn btn-lg btn-light">Купить можно здесь</a>
                 </p>
                 <hr/>
                 <dl>
@@ -117,6 +121,7 @@
                         Старт продаж состоялся 12 ноября 2020 года в США, Канаде, Мексике, Южной Корее, Японии, Австралии
                         и Новой Зеландии, а 19 ноября 2020 года и в остальных регионах.</span></dd>
                 </dl>
+                </div>
                 <div class="video-container">
                     <video class="ps5-commercial" src="res/videos/ps5.mp4" muted autoplay preload loop></video>
                     <div>
@@ -143,6 +148,7 @@
                     признание после выпуска игры Donkey Kong в 1981 году, а также игровой системы
                     <strong><abbr title="Nintendo Entertainment System">NES</abbr></strong>
                     и игры <u>Super Mario Bros.</u> в 1985 году.
+                    <a href="./html/nintendo.html" class="btn btn-lg btn-light">Купить можно здесь</a>
                 </p>
                 <div class="nintendo-div-flex">
                 <ol type="I" start="0" class="nintendo-list">
@@ -227,34 +233,53 @@
                 <p>
                     <em>Xbox</em> — серия игровых консолей от американской транснациональной корпорации Microsoft.<br/>
                     Первая приставка вышла на рынок 15 ноября 2001 года, последняя на данный момент — 10 ноября 2020 года.
+                    <a href="./html/xbox.html" class="btn btn-lg btn-light">Купить можно здесь</a>
                 </p>
             </section>
-            <section>
-                <h2 id="last-title">Достойны упоминания</h2>
-                <h2>Игровые консоли <a href="https://en.wikipedia.org/wiki/List_of_Sega_video_game_consoles" id="sega-link">SEGA</a></h2>
-            </section>
+            <div class="section-divider"></div>
             <section>
                 <h2>Фото</h2>
                 <div class="gallery">
-                    <div>
+                    <div class="img1">
                         <img src="gallery/switchdock.jpg" alt="Switch">
                         <div>
                             <h4>Nintendo Switch</h4>
                             <p>Гибридная консоль Nintendo Switch - хороший выбор как для домашнего, так и для портативного гейминга.</p>
                         </div>
                     </div>
-                    <div>
+                    <div class="img2">
                         <img src="gallery/xbox.jpg" alt="XBOX">
                         <div>
                             <h4>XBOX Series X</h4>
                             <p>Последняя на данный момент консоль серии XBOX порадует Вас графикой высочайшего качества.</p>
                         </div>
                     </div>
-                    <div>
+                    <div class="img3">
                         <img src="gallery/ps5.jpg" alt="PS5">
                         <div>
                             <h4>PlayStation 5</h4>
                             <p>Великолепная графика нового поколения и эксклюзивные игры, которых нет больше нигде.</p>
+                        </div>
+                    </div>
+                    <div class="img4">
+                        <img src="gallery/switchdisconnected.jpg" alt="JoyCons">
+                        <div>
+                            <h4>Joy-Cons</h4>
+                            <p>Уникальные в своём роде отсоединяемые сменные контроллеры консоли Nintendo Switch.</p>
+                        </div>
+                    </div>
+                    <div class="img5">
+                        <img src="gallery/ps4dualshocks.jpg" alt="DualShocks">
+                        <div>
+                            <h4>DualShock</h4>
+                            <p>Контроллеры DualShock консоли PS4.</p>
+                        </div>
+                    </div>
+                    <div class="img6">
+                        <img src="gallery/ps4headphones.jpg" alt="PS4">
+                        <div>
+                            <h4>PS4</h4>
+                            <p>Даже после выхода PS5 более старая консоль Sony по-прежнему заслуживает внимания.</p>
                         </div>
                     </div>
                 </div>
@@ -271,29 +296,44 @@
         </div>
     </main>
     <footer>
-        <h4 class="contacts-title">Контакты</h4>
-        <div><a href="tel:88005553535">Телефон</a></div>
-        <div><a href="html/contact-form.html">Обратная связь</a></div>
-        <address>
-            Связаться с автором также можно по <a href="mailto:vasilievvict1@yandex.ru">E-mail</a>
-        </address>
-        <div class="social-links">
-            <button class="social">
-                <img src="res/images/vk-logo.png" alt="VK" width="30" height="30">
-            </button>
-            <button class="social">
-                <img src="res/images/tiktok-logo.png" alt="TikTok" width="30" height="30">
-            </button>
-            <button class="social">
-                <img src="res/images/yt-logo.png" alt="YouTube" width="30" height="30">
-            </button>
-            <button class="social">
-                <img src="res/images/telegram-logo.svg" alt="Telegram" width="30" height="30">
-            </button>
-            <button class="social">
-                <img src="res/images/discord-logo.png" alt="Discord" width="30" height="30">
-            </button>
+        <div class="about-us">
+            <h4>О нас</h4>
+            <p>Наш магазин Chill Store не так давно появился на рынке, но несмотря на это мы всегда готовы
+                предложить Вам как новинки мира консолей и игры для них, так и достаточно старые и раритетные консоли.
+                В нашем магазине каждую консоль можно испробовать перед покупкой, чтобы Вы точно могли определить, хотите ли
+                совершить покупку. Наш приветливый персонал и уютная атмосфера ждут Вас!</p>
         </div>
+        <div class="contacts">
+            <h4>Контакты</h4>
+            <div><a href="tel:88005553535">Телефон</a></div>
+            <div><a href="html/contact-form.html">Обратная связь</a></div>
+            <address>
+                Связаться с автором также можно по <a href="mailto:vasilievvict1@yandex.ru">E-mail</a>
+            </address>
+            <div class="social-links">
+                <button class="social">
+                    <img src="res/images/vk-logo.png" alt="VK" width="30" height="30">
+                </button>
+                <button class="social">
+                    <img src="res/images/tiktok-logo.png" alt="TikTok" width="30" height="30">
+                </button>
+                <button class="social">
+                    <img src="res/images/yt-logo.png" alt="YouTube" width="30" height="30">
+                </button>
+                <button class="social">
+                    <img src="res/images/telegram-logo.svg" alt="Telegram" width="30" height="30">
+                </button>
+                <button class="social">
+                    <img src="res/images/discord-logo.png" alt="Discord" width="30" height="30">
+                </button>
+            </div>
+        </div>
+        <div class="consoles">
+        <h4>Консоли</h4>
+        <div><a href="./html/nintendo.html">Nintendo</a></div>
+        <div><a href="./html/playstation.html">PlayStation</a></div>
+        <div><a href="./html/xbox.html">XBOX</a></div>
+    </div>
     </footer>
 </body>
 </html>

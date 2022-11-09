@@ -173,14 +173,20 @@ a#sega-link:hover {
 }
 
 .anchor-dd-image, .dd-image {
-    max-width: 20%;
+    max-width: 200px;
+    margin: 0 auto;
 }
 
 .dd-image-clickable {
     max-width: 100%;
 }
 
+.ps-title {
+    grid-area: title;
+}
+
 dl {
+    grid-area: content;
     display: flex;
     margin-right: 0;
     flex-direction: column;
@@ -219,6 +225,14 @@ footer {
 
 .ps-div {
     background: linear-gradient(to bottom, #3B353E 5%, #00A5FF 85%);
+}
+
+.ps-grid {
+    display: grid;
+    grid-template: 1fr fit-content(300px) / 5fr 1fr;
+    grid-template-areas:
+            "title image"
+            "content content";
 }
 
 .nintendo-div {
@@ -263,7 +277,8 @@ div.section-divider {
 }
 
 .ps-logo {
-    float: right;
+    grid-area: image;
+    justify-self: center;
 }
 
 blockquote {
@@ -273,7 +288,7 @@ blockquote {
 }
 
 .notification {
-    z-index: 6;
+    z-index: 11;
     position: fixed;
     left: 5%;
     top: 15%;
@@ -334,18 +349,51 @@ blockquote {
 }
 
 .gallery {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-auto-flow: column dense;
     max-width: 95vw;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-items: stretch;
+    grid-template: repeat(3, 100px) / repeat(6, minmax(10%, 1fr));
+    grid-template-areas: "image1 image1 image2 image2 image2 image3"
+                        "image1 image1 image4 image4 image5 image3"
+                        "image1 image1 image4 image4 image6 image6";
+    grid-gap: 10px 10px;
+}
+
+.img1 {
+    grid-area: image1;
+}
+.img2 {
+    grid-area: image2;
+}
+.img3 {
+    grid-area: image3;
+}
+.img4 {
+    grid-area: image4;
+}
+.img5 {
+    grid-area: image5;
+}
+.img6 {
+    grid-area: image6;
 }
 
 .gallery div {
     position: relative;
     overflow: hidden;
     transition: all ease-in-out .3s;
-    width: 50vw;
+    max-width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    min-width: 0;
+    min-height: 0;
+}
+
+.gallery div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .gallery div:hover {
@@ -363,13 +411,14 @@ blockquote {
     opacity: 0;
     transform: translateY(100%);
     transition: all ease-in-out .5s;
-    height: 25%;
+    height: fit-content;
     width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
     background: linear-gradient(to top, #303030, rgba(48,48,48,0));
-    padding: 20px 10px 10px 10px;
+    padding: 20px 10px 0 10px;
+    font-size: 2vh;
 }
 
 h4 {
@@ -394,7 +443,7 @@ h4 ~ p {
     padding: 20px;
     position: absolute;
     top: 10%;
-    right: 20%;
+    right: 7%;
     height: 500px;
     width: 300px;
     background: radial-gradient(circle at top left, mediumblue, blue);
@@ -492,6 +541,21 @@ h4 ~ p {
     .video-container div h4 {
         font-size: 2.5vw; !important;
     }
+
+    .ps-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: "image" "title" "content";
+    }
+
+    .gallery {
+        grid-template:  repeat(6, 200px) / repeat(3, minmax(30%, 1fr));
+        grid-template-areas: "image1 image1 image2"
+        "image1 image1 image2"
+        "image3 image3 image3"
+        "image5 image5 image5"
+        "image6 image6 image6"
+        "image4 image4 image4";
+    }
 }
 
 .social-links {
@@ -536,6 +600,32 @@ h4 ~ p {
     z-index: 1;
 }
 
-footer h4, footer div {
-    padding: 0 30px;
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(30%, 1fr));
+    height: auto;
+    padding: 10px 30px;
+    grid-gap: 10px;
+}
+
+@media screen and (max-width: 1000px) and (min-width: 701px) {
+    footer {
+        grid-template: 1fr 1fr / 1fr 1fr;
+    }
+
+    .contacts {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    footer {
+        grid-template-rows: repeat(3, fit-content(1fr));
+        grid-template-columns: initial;
+    }
+
+    .contacts {
+        grid-row: 3 / 4;
+    }
 }

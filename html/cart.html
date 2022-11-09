@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PlayStation | CHILL STORE</title>
+  <title>Корзина | CHILL STORE</title>
   <link rel="icon" type="image/png" href="/res/images/favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -12,8 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/main-style.css">
-  <link rel="stylesheet" href="../css/cards.css">
-  <link rel="stylesheet" href="../css/ps-cards.css">
+  <link rel="stylesheet" href="../css/cart.css">
 </head>
 <body>
 <header>
@@ -23,51 +22,41 @@
   </a>
   <span class="flex-fill"></span>
   <nav class="btn-group btn-group-lg header-nav">
-    <a href="./cart.html" class="btn btn-lg btn-light">Корзина</a>
+    <a href="playstation.html" class="btn btn-lg btn-light">PlayStation</a>
+    <a href="nintendo.html" class="btn btn-lg btn-light">Nintendo</a>
+    <a href="xbox.html" class="btn btn-lg btn-light">XBOX</a>
   </nav>
   <label for="burger" class="burger"><img src="../res/images/burger.png" alt="Menu" width="64" height="64"></label>
   <input type="checkbox" id="burger" class="burger" hidden>
   <div class="burger-menu">
-    <a href="./cart.html" class="btn btn-lg btn-light">Корзина</a>
+    <a href="playstation.html" class="btn btn-lg btn-light">PlayStation</a>
+    <a href="nintendo.html" class="btn btn-lg btn-light">Nintendo</a>
+    <a href="xbox.html" class="btn btn-lg btn-light">XBOX</a>
     <a href="contact-form.html" class="btn btn-lg btn-light">Обратная связь</a>
   </div>
 </header>
 <main>
-  <div class="cards-container">
-    <div class="card-nobootstrap">
-      <div class="card-panel">
-        <h5>PS3</h5>
-        <p>Консоль не нова, но всё ещё может порадовать некоторыми интересными эксклюзивами.</p>
-        <button class="btn btn-lg btn-light add-to-cart" data-item="PS3">В корзину</button>
-      </div>
-    </div>
-    <div class="card-nobootstrap">
-      <div class="card-panel">
-        <h5>PS4</h5>
-        <p>Графика и эксклюзивы - PS4 не уступает ни в том, ни в другом.</p>
-        <button class="btn btn-lg btn-light add-to-cart" data-item="PS4">В корзину</button>
-      </div>
-    </div>
-    <div class="card-nobootstrap">
-      <div class="card-panel">
-        <h5>PS5</h5>
-        <p>Новейшая консоль Sony, поддерживающая nextgen-технологии графики.</p>
-        <button class="btn btn-lg btn-light add-to-cart" data-item="PS5">В корзину</button>
+  <div class="cart-container" id="cart-container">
+    <h4 id="cart-title"></h4>
+  </div>
+  <div class="modal fade" id="deletionModal" tabindex="-1" aria-labelledby="deletionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="deletionModalLabel">Удаление из корзины</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Вы уверены, что хотите удалить этот товар из корзины?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Нет</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="delete-confirm">Да</button>
+        </div>
       </div>
     </div>
   </div>
-  <div class="toast-container position-fixed bottom-0 end-0 p-3">
-    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="successToast">
-      <div class="toast-header">
-        <strong class="me-auto">Успех</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div class="toast-body">
-        Товар добавлен в корзину.
-      </div>
-    </div>
-  </div>
-  <script src="../js/add-to-cart.js"></script>
+  <script src="../js/cart.js"></script>
 </main>
 <footer>
   <div class="about-us">
