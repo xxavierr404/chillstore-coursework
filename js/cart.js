@@ -45,7 +45,7 @@ function addCartItem(itemName, quantity) {
         <div class="controls">
         <p class="item-price">${itemPriceMap[itemName]} руб.</p>
           <label for="quantity${itemCount}">Количество:</label>
-          <input class="quantity" type="number" min="1" max="100" id="quantity${itemCount}" value="${quantity}" required>
+          <input class="quantity" type="number" min="1" max="100" id="quantity${itemCount}" value="${quantity}">
           <button class="delete" data-bs-toggle="modal" data-bs-target="#deletionModal">Удалить</button>
         </div>
       </div>`;
@@ -99,8 +99,7 @@ for (let name in result) {
 }
 cartTitle.textContent = `В Вашей корзине ${itemCount} товаров.`;
 
-for (let i = 1; i <= itemCount; i++) {
-    let quantityInput = document.getElementById(`quantity${i}`);
+for (let quantityInput of document.getElementsByClassName("quantity")) {
     quantityInput.addEventListener("input", function () {
         this.value = this.value < 1 ? 1 : this.value > 100 ? 100 : this.value;
         updateQuantity(quantityInput.parentElement.parentElement.id, this.value);
