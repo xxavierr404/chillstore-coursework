@@ -9,6 +9,18 @@ let itemInfoMap = {
     "XSX": "XBOX Series X 1TB"
 }
 
+let itemPriceMap = {
+    "PS3": 8000,
+    "PS4": 30000,
+    "PS5": 50000,
+    "N3DS": 12000,
+    "NX": 24000,
+    "X360": 8000,
+    "XONE": 28000,
+    "XSX": 45000
+}
+
+
 const psLogoPath = "../res/images/ps-logo.svg";
 const nintendoLogoPath = "../res/images/nintendo-logo.png";
 const xboxLogoPath = "../res/images/xbox-logo.png";
@@ -31,8 +43,9 @@ function addCartItem(itemName, quantity) {
         <p class="item-info">${itemInfoMap[itemName]}</p>
         <div class="flex-fill"></div>
         <div class="controls">
+        <p class="item-price">${itemPriceMap[itemName]} руб.</p>
           <label for="quantity${itemCount}">Количество:</label>
-          <input type="number" min="1" max="100" id="quantity${itemCount}" value="${quantity}" required>
+          <input class="quantity" type="number" min="1" max="100" id="quantity${itemCount}" value="${quantity}" required>
           <button class="delete" data-bs-toggle="modal" data-bs-target="#deletionModal">Удалить</button>
         </div>
       </div>`;
@@ -44,8 +57,24 @@ function deleteCartItemFromCookie(itemName) {
 }
 
 function updateQuantity(itemName, quantity) {
-    quantity = quantity < 1 ? 1 : quantity > 100 ? 100 : quantity;
     document.cookie = `${encodeURIComponent(itemName)}=${quantity}; path=/;`;
+}
+
+function getOneItemPriceFromControl(control) {
+    return Number(control.getElementsByClassName("item-price")[0].textContent.split(" ")[0]);
+}
+
+function getQuantityFromControl(control) {
+    return control.getElementsByClassName("quantity")[0].value;
+}
+
+function updateSum() {
+    let sumElement = document.getElementById("sum-cost");
+    let sum = 0;
+    for (let control of document.getElementsByClassName("controls")) {
+        sum += getQuantityFromControl(control) * getOneItemPriceFromControl(control);
+    }
+    sumElement.textContent = `Сумма: ${sum} рублей.`;
 }
 
 let cookieStr = document.cookie;
@@ -71,13 +100,11 @@ for (let name in result) {
 cartTitle.textContent = `В Вашей корзине ${itemCount} товаров.`;
 
 for (let i = 1; i <= itemCount; i++) {
-    console.log("Processing item number " + i);
     let quantityInput = document.getElementById(`quantity${i}`);
-    console.log(quantityInput);
     quantityInput.addEventListener("input", function () {
-        console.log("Value changed!");
-        console.log(this.value);
+        this.value = this.value < 1 ? 1 : this.value > 100 ? 100 : this.value;
         updateQuantity(quantityInput.parentElement.parentElement.id, this.value);
+        updateSum();
     });
 }
 
@@ -88,6 +115,9 @@ for (let button of document.getElementsByClassName("delete")) {
             deleteCartItemFromCookie(button.parentElement.parentElement.id);
             button.parentElement.parentElement.parentElement.remove();
             cartTitle.textContent = `В Вашей корзине ${--itemCount} товаров.`;
+            updateSum();
         };
     };
 }
+
+updateSum();

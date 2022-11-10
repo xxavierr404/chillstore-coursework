@@ -1,24 +1,17 @@
-:root {
-    --base-transform: 100%;
-}
-
 main {
     min-height: 100%;
 }
 
 .form-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     width: 100%;
     height: 100%;
     padding: 20px;
-    position: relative;
     overflow: hidden;
 }
 
 .contact-form {
-    position: relative;
     height: fit-content;
+    width: 100%;
     background-color: rgba(255, 175, 175, 0.8);
     border-radius: 10px;
     padding: 3em;
@@ -77,6 +70,7 @@ button {
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
     max-width: 40%;
+    min-width: 150px;
     font-size: 16pt;
     border-radius: 10px;
     border-width: 1px;
@@ -111,68 +105,10 @@ main {
     background: linear-gradient(to bottom right, gray, pink);
 }
 
-.videoframe {
-    width: 100%;
-    height: 100%;
-}
-
-#glass1, #glass2, #glass3, #glass4, .contact-form::before {
-    display: inline-block;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.3);
-    width: 100px;
-    height: 100px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 10px 1px white;
-}
-
-#glass1 {
-    z-index: 1;
-    top: 300px;
-    left: 5px;
-    animation: ease 10s 1s movement alternate infinite;
-    --transform: 30%;
-}
-
-#glass2 {
-    left: 700px;
-    animation: ease 10s 5s movement alternate infinite;
-    --transform: 30%;
-}
-
-.contact-form::before {
-    content: '';
-    z-index: 1;
-    left: 90%;
-    top: 70%;
-    width: 200px;
-    height: 200px;
-}
-
-#glass4 {
-    z-index: 1;
-    left: 5%;
-    top: -3%;
-    animation: ease 10s 10s movement alternate infinite;
-}
-
-@keyframes movement {
-    from {
-        transform: translateX(0) translateY(0);
-    }
-    50% {
-        transform: translateX(calc(var(--base-transform) / 2));
-    }
-    to {
-        transform: translateY(calc(var(--base-transform) / -3));
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .form-container {
-        display: flex;
-        flex-direction: column;
+@media screen and (min-width: 701px) {
+    .contact-form {
+        max-width: 700px;
+        margin: 0 auto;
     }
 }
 
