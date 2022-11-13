@@ -7,6 +7,21 @@
     flex-direction: row;
 }
 
+.xbox-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 10px 10px;
+}
+
+.xbox-banner {
+    max-width: 20vw;
+    object-fit: scale-down;
+    vertical-align: top;
+    outline: white 2px solid;
+    height: fit-content;
+    box-shadow: white 0 0 3px 3px;
+}
+
 body {
     margin: 0;
     width: 100%;
@@ -440,6 +455,10 @@ h4 ~ p {
 
 @media screen and (max-width: 1000px) {
     .nintendo-div-flex {
+        flex-direction: column;
+    }
+
+    .xbox-flex {
         flex-direction: column;
     }
 
