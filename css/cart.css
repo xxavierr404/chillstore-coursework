@@ -54,4 +54,8 @@
         flex-direction: column;
         justify-items: center;
     }
+
+    .item-info {
+        text-align: center;
+    }
 }
