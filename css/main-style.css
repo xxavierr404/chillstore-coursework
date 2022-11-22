@@ -462,6 +462,12 @@ h4 ~ p {
         flex-direction: column;
     }
 
+    .xbox-banner {
+        max-width: 90vw;
+        width: 100%;
+        margin: 0 auto;
+    }
+
     .switch-image {
         align-self: center;
         width: 100%;
