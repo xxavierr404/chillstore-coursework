@@ -5,7 +5,7 @@ body {
 .card-panel {
     overflow: hidden;
     transition: all 1s ease;
-    right: 0;
+    right: -15%;
 }
 
 .card-panel:hover {
@@ -60,11 +60,5 @@ body {
     }
     to {
         transform: rotateZ(720deg);
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .card-panel {
-        right: -15%;
     }
 }

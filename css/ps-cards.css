@@ -4,7 +4,7 @@
 }
 
 .card-panel {
-    right: 0;
+    right: -15%;
 }
 
 .card-nobootstrap:hover {
@@ -14,10 +14,4 @@
 
 .cards-container:has(.card-nobootstrap:hover) .card-nobootstrap:not(:hover) {
     filter: blur(10px);
-}
-
-@media screen and (max-width: 800px) {
-    .card-panel {
-        right: -15%;
-    }
 }
