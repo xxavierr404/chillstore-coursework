@@ -62,3 +62,9 @@ body {
         transform: rotateZ(720deg);
     }
 }
+
+@media screen and (max-width: 800px) {
+    .card-panel {
+        right: -15%;
+    }
+}

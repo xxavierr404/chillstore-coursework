@@ -144,4 +144,12 @@
         flex-direction: column;
         align-items: center;
     }
+
+    .pseudo-anim {
+        left: -30px;
+    }
+
+    .card-panel {
+        right: -15%;
+    }
 }

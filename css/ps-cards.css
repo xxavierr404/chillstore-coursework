@@ -7,7 +7,6 @@
     right: 0;
 }
 
-
 .card-nobootstrap:hover {
     transform: translateZ(10px) scale(120%);
     filter: none;
@@ -15,4 +14,10 @@
 
 .cards-container:has(.card-nobootstrap:hover) .card-nobootstrap:not(:hover) {
     filter: blur(10px);
+}
+
+@media screen and (max-width: 800px) {
+    .card-panel {
+        right: -15%;
+    }
 }
