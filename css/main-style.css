@@ -512,8 +512,8 @@ h4 ~ p {
 
     .gallery {
         grid-template:  repeat(6, 200px) / repeat(3, minmax(30%, 1fr));
-        grid-template-areas: "image1 image1 image2"
-        "image1 image1 image2"
+        grid-template-areas: "image1 image1 image1"
+        "image2 image2 image2"
         "image3 image3 image3"
         "image5 image5 image5"
         "image6 image6 image6"
